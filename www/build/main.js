@@ -203,6 +203,8 @@ var GraficaPage = /** @class */ (function () {
         this.graficadorProvider.post(this.dataSubmit, this.apiUrl)
             .then(function (result) {
             _this.puntos = result;
+            console.log(_this.puntos);
+            _this.graficar();
         }, function (err) {
             console.log(err);
         });
@@ -215,9 +217,10 @@ var GraficaPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-grafica',template:/*ion-inline-start:"/home/felipe/Universidad/Monitoria/Project/Ceiba/src/pages/grafica/grafica.html"*/'<!--\n  Generated template for the GraficaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="dark">\n    <ion-title>Gráfica</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="pantalla">\n\n    <form (ngSubmit)="submitForm()">\n      <ion-item>\n        <ion-label>Date</ion-label>\n        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="dataSubmit.myDate" [ngModelOptions]="{standalone: true}">\n        </ion-datetime>\n      </ion-item>\n      <button ion-button type="submit" block>Graficar</button>\n\n    </form>\n\n    <ion-card-content>\n        <canvas class="lineCanvas" #lineCanvas drawTicks="false" height="500" width="500" ></canvas>\n    </ion-card-content>\n\n</ion-content>\n'/*ion-inline-end:"/home/felipe/Universidad/Monitoria/Project/Ceiba/src/pages/grafica/grafica.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_graficador_graficador__["a" /* GraficadorProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_graficador_graficador__["a" /* GraficadorProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_graficador_graficador__["a" /* GraficadorProvider */]) === "function" && _b || Object])
     ], GraficaPage);
     return GraficaPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=grafica.js.map
@@ -266,7 +269,7 @@ var GraficadorProvider = /** @class */ (function () {
     GraficadorProvider.prototype.post = function (data, apiUrl) {
         var _this = this;
         return (new Promise(function (resolve, reject) {
-            _this.http.post(apiUrl, JSON.stringify(data))
+            _this.http.post(apiUrl, data)
                 .subscribe(function (res) {
                 resolve(res);
             }, function (err) {
@@ -276,9 +279,10 @@ var GraficadorProvider = /** @class */ (function () {
     };
     GraficadorProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
     ], GraficadorProvider);
     return GraficadorProvider;
+    var _a;
 }());
 
 //# sourceMappingURL=graficador.js.map

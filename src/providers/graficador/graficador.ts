@@ -30,9 +30,9 @@ export class GraficadorProvider {
   }
 
 
-  public post(data, apiUrl) { 
+  public post(data, apiUrl) {
     return (new Promise((resolve, reject) => {
-    this.http.post(apiUrl, JSON.stringify(data))
+    this.http.post(apiUrl, data)
         .subscribe(res => {
           resolve(res);
         }, (err) => {
@@ -40,5 +40,4 @@ export class GraficadorProvider {
         });
     }));
   }
-
 }

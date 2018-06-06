@@ -146,6 +146,8 @@ export class GraficaPage {
       this.graficadorProvider.post(this.dataSubmit, this.apiUrl)
       .then(result => {
         this.puntos = result;
+        console.log(this.puntos);
+        this.graficar();
       }, (err) => {
         console.log(err);
       });
