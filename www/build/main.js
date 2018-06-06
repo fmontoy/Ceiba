@@ -63,7 +63,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/felipe/Universidad/Monitoria/Project/Ceiba/src/pages/home/home.html"*/'\n<ion-content padding class = "pantalla">\n  <img class = "logo" src="/assets/imgs/Ceiba.png">\n   <br>\n   <button class = "boton" ion-button (click)="goGrafica()"><b>Ingresar</b></button>\n</ion-content>\n'/*ion-inline-end:"/home/felipe/Universidad/Monitoria/Project/Ceiba/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/felipe/Universidad/Monitoria/Project/Ceiba/src/pages/home/home.html"*/'\n<ion-content padding class = "pantalla">\n  <img class = "logo" src="assets/imgs/Ceiba.png">\n   <br>\n   <button class = "boton" ion-button (click)="goGrafica()"><b>Ingresar</b></button>\n</ion-content>\n'/*ion-inline-end:"/home/felipe/Universidad/Monitoria/Project/Ceiba/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], HomePage);
@@ -145,6 +145,7 @@ var GraficaPage = /** @class */ (function () {
             data: {
                 datasets: [{
                         label: 'Luz',
+                        lineTension: 0,
                         data: this.puntos["light"],
                         fill: false,
                         borderColor: [
@@ -154,6 +155,7 @@ var GraficaPage = /** @class */ (function () {
                     },
                     {
                         label: 'Temp',
+                        lineTension: 0,
                         data: this.puntos["temp"],
                         fill: false,
                         borderColor: [
@@ -163,6 +165,7 @@ var GraficaPage = /** @class */ (function () {
                     },
                     {
                         label: 'Humedad',
+                        lineTension: 0,
                         data: this.puntos["humidity"],
                         fill: false,
                         borderColor: [
@@ -172,6 +175,7 @@ var GraficaPage = /** @class */ (function () {
                     },
                     {
                         label: 'Presión',
+                        lineTension: 0,
                         data: this.puntos["airPress"],
                         fill: false,
                         borderColor: [
@@ -182,6 +186,7 @@ var GraficaPage = /** @class */ (function () {
                 ]
             },
             options: {
+                bezierCurve: false,
                 scales: {
                     xAxes: [{
                             display: true,
@@ -279,10 +284,9 @@ var GraficadorProvider = /** @class */ (function () {
     };
     GraficadorProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
     ], GraficadorProvider);
     return GraficadorProvider;
-    var _a;
 }());
 
 //# sourceMappingURL=graficador.js.map

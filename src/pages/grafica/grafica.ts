@@ -78,6 +78,7 @@ export class GraficaPage {
                 
                 datasets: [{
                     label: 'Luz',
+                    lineTension: 0,
                     data:this.puntos["light"],
                     fill: false,
                     borderColor: [
@@ -88,6 +89,7 @@ export class GraficaPage {
                 },
                 {
                     label: 'Temp',
+                    lineTension: 0,
                     data:this.puntos["temp"],
                     fill: false,
                     borderColor: [
@@ -98,6 +100,7 @@ export class GraficaPage {
                 },
                 {
                     label: 'Humedad',
+                    lineTension: 0,
                     data:this.puntos["humidity"],
                     fill: false,
                     borderColor: [
@@ -108,6 +111,7 @@ export class GraficaPage {
                 },
                 {
                     label: 'Presión',
+                    lineTension: 0,
                     data:this.puntos["airPress"],
                     fill: false,
                     borderColor: [
@@ -123,6 +127,7 @@ export class GraficaPage {
             
         
             options: {
+                bezierCurve : false,
                 scales: {
                     xAxes: [{
                         display:true,
